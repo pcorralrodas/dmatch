@@ -1,0 +1,8 @@
+v 1
+d 'dmatch': Stata command for matching two datasets using a nonparametric method.
+d 
+d Distribution-Date: 3/6/2023
+d 
+d 
+F d/dmatch.ado
+F d/dmatch.sthlp
