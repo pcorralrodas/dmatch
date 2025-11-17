@@ -16,6 +16,7 @@ program define dmatch, eclass byable(recall)
 		trimup(numlist integer >=90 <=99)
 		trimlow(numlist integer >0 <=10)
 		trimvar(varlist max=1 numeric)
+		expand(varlist)
 	];
 #delimit cr
 set more off
@@ -68,6 +69,14 @@ qui{
 			error 198
 			exit
 		}
+	}
+	
+	//Expand
+	if (!missing("`expand'")){
+		tempvar expandv
+		gen `expandv' = int(`expand'/10) if `touse'==1
+		replace `expandv' = 1 if `touse2'==1
+		expand `expandv'
 	}
 	
 	//Set seed
@@ -152,7 +161,8 @@ qui{
 		}
 		
 	}
- 
+	
+	if (!missing("`expand'")) duplicates drop `todata' `uniqid', force
 	
 }
 end
