@@ -1,5 +1,5 @@
 clear all
-run "C:\Users\wb378870\OneDrive - WBG\000.my_ados\dmatch\dmatch.ado"
+run "C:\Users\wb378870\github\dmatch\d\dmatch.ado"
 sysuse auto, clear
 	set seed 12345
 	gen id=_n
@@ -12,4 +12,11 @@ sysuse auto, clear
 	replace trunk = . if random < 11 
 	
 	
-dmatch length weight trunk, uniqid(id) todata(target) strata(foreign) trimvar(length)  
+count
+	
+sum
+dmatch price weight, uniqid(id) todata(target) strata(foreign) trimvar(length) expand(weight)
+
+count
+
+sum

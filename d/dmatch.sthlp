@@ -34,7 +34,11 @@ uniqid(varlist) todata(varlist) [{it:options}]
        the distribution match is done by strata. The definition of strata should be consistent in the source and target data.{p_end}
 {synopt:{opt trimvar(varlist max=1 numeric)}} A variable used for trimming the source dataset to exclude outliers. The default trimvar is matchvar. This option should be used with trimup and/or trimdown option. {p_end}
 {synopt:{opt trimup(numlist integer >=90  & <=99)}} An integer between 90 and 99 to indicate the removal of values above that percentile. This option is used to drop outliers in the upper tail. {p_end}
-{synopt:{opt trimlow(numlist integer >0 & <=10)}} An integer between 1 and 10 to indicate the removal of values below that percentile. This option is used to drop outliers in the lower tail. {p_end}
+{synopt:{opt trimlow(numlist integer >0 & <=10)}} An integer between 1 and 10 to indicate the removal of values below that percentile. This option is used to drop outliers in the lower tail. 
+
+{synopt:{opt expand(varlist max=1)}} A variable used to indicate by how many observations the source data will be expanded before taking a SRS. This option is used to avoid observations with outliers but small sampling probability to be overly represented. Normally, users would specify the inverse probability sampling weights here.
+
+{p_end}
 
 {title:Description}
 {p 4 4 2}
