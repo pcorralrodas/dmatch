@@ -78,7 +78,7 @@ dmatch length weight trunk, ///
 ## 📥 Installation
 
 ```stata
-net install dmatch, from("https://github.com/pcorralrodas/dmatch")
+github install pcorralrodas/dmatch
 ```
 
 ## 👤 Authors
@@ -99,6 +99,4 @@ jgao4@worldbank.org
 
 All errors or omissions are the responsibility of the authors alone. This software is provided as-is, without warranty.
 
-## 📄 License
 
-See the `LICENSE` file in this repository.
