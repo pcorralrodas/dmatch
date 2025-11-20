@@ -96,7 +96,7 @@ Corresponding author
 jgao4@worldbank.org
 
 ## 📌 Suggested citation
-Corral, P. and Gao, J. (2018). dmatch: A nonparametric distribution matching command for
+Corral, P. and Gao, J. (2019). dmatch: A nonparametric distribution matching command for
 stata. https://github.com/pcorralrodas/dmatch. The World Bank, Poverty and Equity
 Global Practice.
 
