@@ -82,8 +82,13 @@ pcorralrodas@worldbank.org{p_end}
 Jia Gao{break}
 The World Bank - Poverty and Equity Global Practice {break}
 Washington, DC{break}
-Corresponding author{break} 
 jgao4@worldbank.org{p_end}
+
+{pstd}
+Leonardo Lucchetti{break}
+The World Bank - Poverty and Equity Global Practice {break}
+Washington, DC{break}
+llucchetti@worldbank.org{p_end}
 
 
 {title:Disclaimer}
