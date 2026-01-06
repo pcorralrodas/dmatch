@@ -1,6 +1,7 @@
 *! version 0.1 Nov 22-2019
 *! Paul Corral - pcorralrodas@worldbank.org  
 *! Jia Gao - World Bank, jgao4@worldbank.org
+*! Leonardo Ramiro Lucchetti, llucchetti@worldbank.org
 *! Equity policy lab
 
 cap program drop dmatch
@@ -21,7 +22,7 @@ program define dmatch, eclass byable(recall)
 #delimit cr
 set more off
 
-qui{
+{
 	*===============================================================================
 	// 1. HOUSE KEEPING
 	*===============================================================================
@@ -95,6 +96,7 @@ qui{
 		}
 	
 	}
+
 *===============================================================================
 //2. Proc data
 *===============================================================================	
@@ -138,10 +140,11 @@ qui{
 	}
 	
 	//Bring in target data matching vector
-	replace `depvar' = `depvar' + runiform()/1000
-	if ("`strata'"==""){
-		
-		
+	tempvar rando
+	gen double `rando' = max(1e-7,(runiform()/1000))
+	replace `depvar' = `depvar' + `rando'
+	// This was a mistake but a quick solution to non replicable results...
+	if ("`strata'"==""){		
 		mata: st_view(Ytarget=.,.,"`depvar'","`touse2'")
 		mata: st_view(Ysource=.,.,"`depvar' `therest'","`touse'")
 		mata: tn = cols(Ysource)
@@ -161,6 +164,7 @@ qui{
 		}
 		
 	}
+	replace `depvar' = `depvar' - `rando'
 	
 	if (!missing("`expand'")) duplicates drop `todata' `uniqid', force
 	
